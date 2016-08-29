@@ -6,18 +6,21 @@ class StudentCollection
     public $students;
     Public $id;
 
-
+    // hier maken we een nieuwe array aan waar de studenten worden opgeslagen
     public function __construct()
     {
         $this->students = [];
     }
 
+
+    // Hier mee kunnen we een student in de collection toevoegen
     public function Add($student)
     {
         array_push($this->students, $student);
     }
 
 
+    // Gaat zoeken op studentcollection en haalt alle eerste namen terug en slaat ze op in de arrat $names
     public function GetFirstNamesArray() {
         $names = [];
         foreach ($this->students as $student) {
@@ -26,6 +29,8 @@ class StudentCollection
         return $names;
     }
 
+
+    // Deze funtie zorgt er voor dat we straks alle gevonden student als lijstje treug gegeven <ul> <li> $Student->Firstname
     public function GetFirstNamesULLI() {
         $out = '<ul>';
         foreach ($this->students as $student) {
